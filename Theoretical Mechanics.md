@@ -66,3 +66,5 @@ $$Q_{\alpha} = \sum_{i=1}^{n} \vec{F_i} \cdot \frac{\partial \vec{r_i}}{\partial
 保守力下可写为：
 $$\vec{F_i}=-\nabla _iV=-(\frac{\partial V}{\partial x_i}\vec{i}+\frac{\partial V}{\partial y_i}\vec{j}+\frac{\partial V}{\partial z_i}\vec{k})$$
 $$Q_a = -\frac{\partial V}{\partial q_{\alpha}}$$
+
+### 1111
