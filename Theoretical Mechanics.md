@@ -67,4 +67,37 @@ $$Q_{\alpha} = \sum_{i=1}^{n} \vec{F_i} \cdot \frac{\partial \vec{r_i}}{\partial
 $$\vec{F_i}=-\nabla _iV=-(\frac{\partial V}{\partial x_i}\vec{i}+\frac{\partial V}{\partial y_i}\vec{j}+\frac{\partial V}{\partial z_i}\vec{k})$$
 $$Q_a = -\frac{\partial V}{\partial q_{\alpha}}$$
 
-### 1111
+在保守力体系下的平衡条件：
+$$\frac{\partial V}{\partial q_{\alpha}} = 0$$
+
+***
+
+### 达朗伯原理
+
+牛顿第二定理：
+$$\vec{F_i} + \vec{R_i} = m_i \ddot{\vec{{r_i}}}$$
+
+达朗伯原理：
+$$\vec{F_i} + \vec{R_i} - m_i \ddot{\vec{{r_i}}} = 0$$
+
+***
+
+### 拉格朗日方程
+
+由虚功原理可得
+$$\Sigma_{i}(\vec{F_i} + \vec{R_i} - m_i \ddot{\vec{{r_i}}}) \cdot \delta \vec{r_i} = 0$$
+
+在理想系统下：
+$$\Sigma_{i}(\vec{F_i} - m_i \ddot{\vec{{r_i}}}) \cdot \delta \vec{r_i} = 0$$
+
+在广义坐标下，上面的公式可以标示为：
+$$Q_{\alpha} - \Sigma_i m_i \ddot{\vec{r_i}} \cdot \frac{\partial \vec{r_i}}{q_{}\alpha} = 0$$
+
+依据两个公式：
+$$\frac{d}{dt}(\frac{\partial \vec{r_i}}{\partial q_{\alpha}}) = \frac{\partial \dot{\vec{r_i}}}{\partial q_{\alpha}}$$
+$$\frac{\partial \dot{\vec{r_i}}}{\dot{q_{\alpha}}} = \frac{\vec{r_i}}{\partial q_{\alpha}}$$
+
+可得基本形式的拉格朗日方程：
+$$\frac{d}{dt}(\frac{\partial T}{\partial \dot{q_{\alpha}}})- \frac{\partial T}{\partial q_{\alpha}} = Q_{\alpha}$$
+
+若主动力为保守力：
