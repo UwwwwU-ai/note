@@ -142,4 +142,61 @@ __按钮组件__：
 
 ***
 
-## 10、
+## 10、四种弹窗组件
+
+先要引入包
+`from tkinter import messagebox`
+
+蓝色：
+`messagebox.showinfo(title,message)`
+
+黄色：
+`messagebox.showwarning(title,message)`
+
+红色：
+`messagebox.showerror(title,message)`
+
+选择是否：
+`messagebox.askokcancel(title,message)`
+可以继续判断
+```
+judge = messagebox.askokcancel(title,message)
+if judge:
+    xxxx
+else:
+    xxxx
+```
+
+***
+
+## 11、顶层窗口
+
+顶层窗口又可以叫内层窗口，创建：
+`tk.Toplevel()`
+其他的组件都一致
+
+***
+
+## 12、补充  
+
+state=('disabled','readonly')
+`tk.Entry(window,width = xx, textvariable = str, font = ('xx', 17),state = 'disabled' )`
+其中disable代表不能操作，而readonly代表只读
+
+***
+
+## 13、菜单创建、设置、开启
+
+菜单创建：
+`menu = tk.Menu(window)`
+
+菜单设置：
+`menu.add_cascade(label = 'xxx')`
+
+菜单开启：
+`window.config(menu)`
+
+***
+
+## 14、
+
