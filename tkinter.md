@@ -200,3 +200,28 @@ state=('disabled','readonly')
 
 ## 14、
 
+
+***
+
+## 附录A
+
+### 1、`grid()`
+
+`grid(row = , column = , sticky = , padx = , pady = ,)`
+
+`row = `表示第几行
+`column = `表示第几列
+`sticky = `表示位置在栏位的哪里，可以填入'n'，'s'，'w'，'e'，分别表示上北下南左西右东
+`padx = , pady = `表示增加上下左右的空白，单位是像素
+
+`.rowconfigure()` `.columnconfigure()`
+可以调整相应行列的所占比例。`frame.rowconfigure(row,weight = )`
+
+***
+
+## 附录B
+
+### 1、容器
+
+`tk.TK()` `tk.Frame()` `tk.Toplevel()`
+
