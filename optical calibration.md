@@ -92,6 +92,7 @@ $$\boxed{\frac{dx}{dt} = -\frac{x}{\tau_{\text{ot}}} + \sqrt{2D}\, W(t)}$$
 ### 离散化
 
 ***
+#### 1、直接离散化
 
 实际模拟过阻尼朗之万方程时，需要将其离散化。最常用的是 Euler–Maruyama 方法：
 $$x_{n+1} = x_n - \frac{\kappa}{\gamma} x_n \Delta t + \sqrt{2D\Delta t}\, w_n$$
@@ -139,4 +140,41 @@ $$x_{n+1} = x_n + a(x_n) \Delta t + b(x_n) \sqrt{\Delta t}\, \varepsilon_n$$
 $$x_{n+1} = x_n - \frac{\kappa}{\gamma} x_n \Delta t + \sqrt{2D} \sqrt{\Delta t}\, \varepsilon_n$$
 即
 $$x_{n+1} = x_n - \frac{\kappa}{\gamma} x_n \Delta t + \sqrt{2D\Delta t}\, \varepsilon_n$$
+
+#### 2、精确离散
+
+$$x_{n+1} = cx_n +\sigma \epsilon _n$$
+其中$c = e^{-\Delta t/\tau}$，$\sigma ^2 = \frac{k_BT}{k}(1 - c^2)$，$\epsilon _n \sim N(0,1)$
+>$$\frac{dx}{dt} = -\frac{\kappa}{\gamma}x + \sqrt{2D}W(t)$$
+>
+>同样按照上面的处理，定义：
+$$B_t = \int _0^t W_sds$$
+>
+>可得：
+$$dx = -\frac{xdt}{\tau} + \sqrt{2D} W_s dt$$
+其中，$\tau = \frac{\gamma}{k}$
+>即：
+$$dx = -\frac{x}{\tau}dt + \sqrt{2D} dB_t$$
+>设 $a = 1/\tau$，让上式左右同乘 $e^{at}$，则方程可变为：
+$$d(e^{at}x) = e^{at}\sqrt{2D}dB_t$$
+>两边积分得：
+$$e^{a(t+\Delta t)}x_{t+\Delta t}-e^{at}x_t = \int_t^{t + \Delta t}e^{as}\sqrt{2D}dB_s$$
+>即：
+$$x_{t+\Delta t} = e^{-a\Delta t}x_t + \sqrt{2D} \int_t^{t + \Delta t}e^{-a(t+\Delta t-s)}dB_s$$
+>令 $\eta = \sqrt{2D} \int_t^{t + \Delta t}e^{-a(t+\Delta t-s)}dB_s$，易得 $\eta$ 服从零均值正态分布，所以接下来要求解 $Var(\eta)$
+>
+>$$
+\begin{aligned}
+Var(\eta) = \; & <(\eta -<\eta>)^2> = <\eta^2> \\
+& = 2D \int_t^{t+\Delta t} \int_t^{t+\Delta t}e^{-a(t + \Delta t - s)}e^{-a(t + \Delta t - u)} \delta(s-u)\, ds\, du \\
+& = 2D\int_t^{t+\Delta t}e^{-2a(t + \Delta t - s)} ds \\
+& = 2D \int _0^{\Delta t}e^{-2am}dm \\
+& = 2D\frac{1-e^{-2a\Delta t}}{2a} \\
+& = D\tau (1-e^{2\Delta t/\tau}) \\
+& = \frac{k_BT}{k}(1-c^2)
+\end{aligned}
+$$
+>
+>所以$$x_{n+1} = cx_n +\sigma \epsilon _n$$
+其中 $c = e^{-\Delta t/\tau}$，$\sigma ^2 = \frac{k_BT}{k}(1 - c^2)$，$\epsilon _n \sim N(0,1)$
 
