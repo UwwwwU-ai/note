@@ -123,7 +123,7 @@ $$\langle (\Delta B)^2 \rangle = \int_t^{t+\Delta t} ds = \Delta t$$
 $$\Delta B \sim \mathcal{N}(0, \Delta t)$$
 > 我们可以将其写为：
 $$\Delta B = \sqrt{\Delta t}\, \varepsilon$$
-其中 $\varepsilon \sim \mathcal{N}(0,1)$ 是标准正态随机变量。正是这个 $\sqrt{\Delta t}$ 因子保证了 $\Delta B$ 的方差为 $\Delta t$（因为 $\text{Var}(\sqrt{\Delta t}\,\varepsilon) = \Delta t \cdot \text{Var}(\varepsilon) = \Delta t$）。
+其中 $\varepsilon \sim \mathcal{N}(0,1)$ 是标准正态随机变量。正是这个 $\sqrt{\Delta t}$ 因子保证了 $\Delta B$ 的方差为 $\Delta t$（因为 $\text{Var}(\sqrt{\Delta t}\,\varepsilon) = \Delta t \cdot \text{Var}(\varepsilon) = \Delta t$。
 >
 >现在我们回到朗之万方程：
 $$\frac{dx}{dt} = a(x) + b(x) W(t)$$
